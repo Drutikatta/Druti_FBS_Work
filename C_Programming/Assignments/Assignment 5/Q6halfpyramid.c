@@ -14,7 +14,7 @@ void main(){
 
     for(int i=1;i<=n;i++){
         for(int col=1;col<=i;col++){
-            printf("%d ",i);
+            printf("%d ",col);
         }
         printf("\n");
     }
