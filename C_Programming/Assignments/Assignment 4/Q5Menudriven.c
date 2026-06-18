@@ -21,7 +21,7 @@ void main(){
     printf("\n 5 check reverse a num");
     printf("\n 6 find sum of num");
 
-    printf("Enter ur choice: ");
+    printf("\n Enter ur choice: ");
     scanf("%d",&choice);
 
     switch(choice){
@@ -30,8 +30,65 @@ void main(){
                 printf("%d is even",n);
             else
                 printf("%d is odd",n);
-        
-        case 2:
-             
+            break;
+        case 2:{
+            int count=0;
+            for(int i =1;i<=n;i++){
+                if(n%i==0)
+                    count++;
+            }
+            if(count==2)
+                printf("%d is Prime",n);
+            else
+                printf("%d is not Prime",n);
+            break;
+        }
+        case 3:{
+            int rev=0,temp=n,digit;
+
+            while(temp>0){
+                digit=temp%10;
+                rev=rev*10+digit;
+                temp=temp/10;
+            }
+            if(n==rev)
+                printf("%d is Pallindrome",n);
+            else
+                printf("%d is not a pallindrome",n);
+            break;
+        }
+        case 4:
+            if(n>0)
+                printf("%d is Positive",n);
+            else if(n<0)
+                printf("%d is negative",n);
+            else
+                printf("%d is Zero",n);
+            break;
+        case 5:{
+            int temp=n, rev=0,digit;
+
+            while(temp>0){
+                digit=temp%10;
+                rev=rev*10+digit;
+                temp=temp/10;
+            }
+            printf("reverse = %d",rev);
+            break;
+        }
+        case 6:{
+            int temp=n,digit,sum=0;
+
+            while(temp>0){
+                digit=temp%10;
+                sum=sum+digit;
+                temp=temp/10;
+            }
+            printf("%d sum of num",sum);
+            break;
+        }
+        default:
+            printf("Invalid choice");
     }  
+    
 }
